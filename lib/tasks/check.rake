@@ -27,9 +27,7 @@ namespace :check do
   end
 
   def notify(product)
-    binding.pry
     Product.create(name: product['title'], value: product['price'].to_f, identifier: product['id'])
-
     UserNotificationMailer.new_possible_pirate_product_found(product).deliver_now
   end
 end
