@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Olá, um novo produto foi encontrado:</p>
+    <p>
+       - IDENTIFICADOR: <%= @product['id'] %> <br/>
+       - Nome Produto: <%= @product['title'] %> <br/>
+       - Valor: R$ <%= @product['price'] %> <br/>
+       - Link: <a href="<%= @product['permalink'] %>">Link do produto</a> <br/>
+    </p>
+    <p>Atenciosamente, <br />
+      Equipe TI
+    </p>
+  </body>
+</html>
