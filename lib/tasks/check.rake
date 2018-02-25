@@ -22,7 +22,10 @@ namespace :check do
   end
 
   def product_not_notified(id)
-    Product.where(identifier: id).empty?
+    six_days_ago = Time.now - 6.days
+    Product.where(identifier: id)
+           .where('updated_at <= ?', six_days_ago)
+           .empty?
   end
 
   def notify(product)
