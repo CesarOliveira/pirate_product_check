@@ -10,7 +10,7 @@ namespace :check do
   def search_product(search_product)
     default_url = 'https://api.mercadolibre.com/sites/MLB/search'
 
-    response = HTTParty.get(URI.encode("#{default_url}/?q=#{search_product}&limit=200"))
+    response = HTTParty.get(URI.encode("#{default_url}/?q=#{search_product}&limit=50"))
 
     return JSON.parse(response.body)
   end
@@ -22,7 +22,7 @@ namespace :check do
   end
 
   def product_not_notified(id)
-    six_days_ago = Time.now - 6.days
+    six_days_ago = Time.now - 5.days
     Product.where(identifier: id)
            .where('updated_at <= ?', six_days_ago)
            .empty?
