@@ -238,7 +238,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   config
   dotenv-rails
-  httparty (~> 0.14.0)
+  httparty (~> 0.21.0)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mysql2
